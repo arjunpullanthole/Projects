@@ -1,13 +1,13 @@
 public class Student
 {
-    public String Name;
+    private String name;
     public void setName(String name)
     {
-        this.Name = name;
+        this.name = name;
     }
     public String getName()
     {
-        return this.Name;
+        return this.name;
     }
 
 }
