@@ -11,9 +11,3 @@ public class Vehicle {
     }
 }
 
-class Car extends Vehicle{
-    @Override
-    public void makeSound(){
-        System.out.printf("Sound came from car\n");
-    }
-}
