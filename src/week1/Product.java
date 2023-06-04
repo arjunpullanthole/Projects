@@ -1,3 +1,5 @@
+package week1;
+
 public class Product {
     double price;
     public double getPrice() {

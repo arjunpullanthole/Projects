@@ -1,9 +1,11 @@
+package week1;
+
 public class Vehicle {
-    int company;
-    public int getCompany() {
+    String company;
+    public String getCompany() {
         return company;
     }
-    public void setCompany(int company) {
+    public void setCompany(String company) {
         this.company = company;
     }
     public void makeSound(){

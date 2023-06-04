@@ -1,3 +1,5 @@
+package week1;
+
 public class Car extends Vehicle{
     @Override
     public void makeSound(){

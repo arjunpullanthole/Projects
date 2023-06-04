@@ -1,8 +1,10 @@
-import java.util.Scanner;
+package week1;
+
 public class Main
 {
     public static void main(String[] args)
     {
+        /*
         System.out.printf("Hello and welcome!\n");
         Student st = new Student();
         //System.out.printf("Enter a name for the student\n");
@@ -25,5 +27,19 @@ public class Main
         Vehicle vh2 = new Car();    // runtime polymorphism
         vh1.makeSound();
         vh2.makeSound();
+        */
+        Document doc = new Document();
+        doc.save();
+        doc.print();
+
+        Dolphin dp1 = new Dolphin(true);
+        Dolphin dp2 = new Dolphin(true,false);
+        dp1.print();
+        dp2.print();
+
+        System.out.println("Plane has "+ Plane.wings + " wings");
+
+        Bird b = new Bird();
+        b.printFeathers();
     }
 }
