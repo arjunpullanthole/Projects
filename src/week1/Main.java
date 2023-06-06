@@ -4,7 +4,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        /*
+
         System.out.printf("Hello and welcome!\n");
         Student st = new Student();
         //System.out.printf("Enter a name for the student\n");
@@ -27,7 +27,7 @@ public class Main
         Vehicle vh2 = new Car();    // runtime polymorphism
         vh1.makeSound();
         vh2.makeSound();
-        */
+
         Document doc = new Document();
         doc.save();
         doc.print();
