@@ -9,6 +9,11 @@ public class ArrayOperations {
     }
     public void minMax(int arr[])
     {
+        if (arr.length == 0)
+        {
+            System.out.println("Array Empty");
+            return;
+        }
         int minTemp=Integer.MAX_VALUE,maxTemp=Integer.MIN_VALUE;
         for (int i=0 ; i<arr.length ; i++)
         {
