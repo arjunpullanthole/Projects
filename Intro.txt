@@ -1,0 +1,17 @@
+Introduction:
+
+My name is Arjun Pullanthole, and I have a total of 9 years of experience in full-stack development. Currently, I am working as a Senior Software engineer on an e-commerce website.
+
+In terms of technologies, I have expertise in various frontend frameworks such as React, Angular, HTML, and CSS. On the backend, I am proficient in Java 8, J2EE, REST, Spring, and Spring Boot. I have experience working with both SQL and NoSQL databases. Additionally, I am well-versed in cloud technologies, particularly AWS, including EC2, S3, and EBS. I am familiar with packaging managers, build tools, testing frameworks, and deployment processes, such as Node, npm, Maven, Jest, Cypress, Selenium, and JUnit.
+
+As for project methodology, I have worked extensively with the agile approach, enabling efficient collaboration and continuous improvement.In terms of team structure, I have collaborated with diverse teams consisting of developers, testers, and stakeholders, following a collaborative and cross-functional model.I have gained domain experience in the finance, banking, and insurance sectors, which has provided me with valuable insights into industry-specific requirements and challenges.
+
+Current Role:
+
+
+In my current project at Goldman Sachs, I am serving as a Senior Software Engineer, contributing to the development of an analytics dashboard. This dashboard is designed to provide internal data analysts with a comprehensive view of stock trends and analysis.
+
+To build this application, we are utilizing React for the frontend, allowing us to create an intuitive and interactive user interface. To build the backend of the analytics dashboard, we are leveraging Java along with frameworks include Spring Boot, which provides a robust foundation for creating RESTful APIs and handling the application's core functionality. Additionally, we are utilizing Spring Data to simplify database access and integration with DynamoDB. For managing dependencies and building the project, we rely on Maven. Furthermore, we have incorporated JUnit for automated testing to ensure the reliability and quality of the backend code. These frameworks and tools together enable efficient development, integration, and testing of the backend components, contributing to the overall success of the analytics dashboard project.
+
+The project team consists of 8 individuals, including developers, testers, and analysts, working collaboratively to ensure the success of the analytics dashboard. We follow an Agile methodology, using Jira as our project management tool. This approach allows us to iterate quickly, adapt to changing requirements, and deliver incremental value to our stakeholders. Overall, the project aims to empower data analysts at Goldman Sachs with a powerful and user-friendly tool to make informed decisions based on stock trends and analysis.
+
