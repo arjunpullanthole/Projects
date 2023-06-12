@@ -15,13 +15,11 @@ public class StringOperations {
     {
         st1 = st1.toLowerCase();
         st2 = st2.toLowerCase();
-        char[] charr1 = st1.toCharArray();
-        char[] charr2 = st2.toCharArray();
-        Arrays.sort(charr1);
-        Arrays.sort(charr2);
-        String stt1 = new String(charr1);
-        String stt2 = new String(charr2);
-        return stt1.equals(stt2);
+        char[] chr1 = st1.toCharArray();
+        char[] chr2 = st2.toCharArray();
+        Arrays.sort(chr1);
+        Arrays.sort(chr2);
+        return Arrays.equals(chr1,chr2);
     }
 
     public String reverseString(String st){
@@ -32,7 +30,7 @@ public class StringOperations {
             chs[i] = chs[j];
             chs[j] = temp;
         }
-        return new String(chs);
+        return String.valueOf(chs);
     }
     public String reverseSentence(String st)
     {
@@ -45,16 +43,7 @@ public class StringOperations {
     {
         if (st1.length() != st2.length())
             return false;
-        int n = st1.length();
-        char ch;
-        for(int i =0; i<n ; i++)
-        {
-            ch = st1.charAt(n-1);
-            st1 = st1.substring(0, n-1);
-            st1 = ch + st1 ;
-            if(st1.equals(st2))
-                return true;
-        }
-        return false;
+        String st = st1.concat(st2);
+        return st.contains(st2);
     }
 }

@@ -83,6 +83,7 @@ public class Main {
             br = new BufferedReader(new FileReader(csvFile));
             String line;
             int i = 0;
+            line = br.readLine();       //Skip the first line
             while ((line = br.readLine()) != null) {
                 String[] fields = line.split(",");
                 st[i] = new Student(fields[0],fields[1],Float.parseFloat(fields[2]));
@@ -100,7 +101,7 @@ public class Main {
             }
         }
         Arrays.sort(st);
-        for(int i =0;i<st.length;i++)
-            st[i].display();
+        for(Student s : st)
+            s.display();
     }
 }

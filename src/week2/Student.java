@@ -13,11 +13,7 @@ public class Student implements Comparable{
     @Override
     public int compareTo(Object o) {
         Student st = (Student) o;
-        if(this.gpa > st.gpa)
-            return 1;
-        else if (this.gpa < st.gpa)
-            return -1;
-        return 0;
+        return this.lastname.compareTo(st.lastname);
     }
 
     public void display(){
