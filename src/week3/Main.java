@@ -5,14 +5,21 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        try {
-            taskException();
-        }
-        catch(CustomException ce){
-            System.out.println(ce.getMessage());
-        }
+        taskThread();
     }
-    public static void taskException() throws CustomException{
+    public static void taskThread()
+    {
+        ThreadPrint tp1 = new ThreadPrint();
+        ThreadPrint tp2 = new ThreadPrint();
+        tp1.start();
+        tp2.start();
+
+        Thread rp1 = new Thread (new RunnablePrint("First"));
+        Thread rp2 = new Thread (new RunnablePrint("Second"));
+        rp1.start();
+        rp2.start();
+    }
+    public void taskException() throws CustomException{
         StringToInteger stoi = new StringToInteger();
         System.out.println(stoi.convert("23"));
         try {
