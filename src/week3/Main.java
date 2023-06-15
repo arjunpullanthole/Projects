@@ -1,11 +1,58 @@
 package week3;
 import week2.Student;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
     public static void main(String[] args) {
-        taskThread();
+        try {
+            threadSum();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        taskBooking();
+        taskDeadlock();
+    }
+    public static void taskDeadlock()
+    {
+        SharedResource sr = new SharedResource();
+        Thread t1 = new Thread (new Consumer(sr,1));
+        Thread t2 = new Thread (new Consumer(sr,2));
+        t1.start();
+        t2.start();
+    }
+    public static void taskBooking()
+    {
+        TicketBooking tb = new TicketBooking(10);
+        ExecutorService ex = Executors.newFixedThreadPool(10);
+        ThreadBooking[] th = new ThreadBooking[10];
+        for(int i=0 ; i<10 ; i++)
+        {
+            th[i] = new ThreadBooking(tb,i+1);
+            ex.execute(th[i]);
+        }
+        ex.shutdown();
+    }
+    public static void threadSum() throws InterruptedException {
+        int sum =0;
+        int[] arr = new int[100];
+        for(int i = 0;i<100;i++)
+            arr[i] = i*2;
+        ExecutorService ex = Executors.newFixedThreadPool(5);
+        ThreadSum[] th = new ThreadSum[5];
+        for(int i=0 ; i<5 ; i++)
+        {
+            th[i] = new ThreadSum(i*20,(i+1)*20, arr);
+            ex.execute(th[i]);
+        }
+        ex.shutdown();
+        ex.awaitTermination(1, TimeUnit.SECONDS);
+        for(int i=0 ; i<5 ; i++)
+            sum += th[i].getSum();
+        System.out.println(sum);
     }
     public static void taskThread()
     {
@@ -19,7 +66,7 @@ public class Main {
         rp1.start();
         rp2.start();
     }
-    public void taskException() throws CustomException{
+    public static void taskException() throws CustomException{
         StringToInteger stoi = new StringToInteger();
         System.out.println(stoi.convert("23"));
         try {
@@ -49,11 +96,11 @@ public class Main {
             throw ce;
         }
     }
-    public void taskComparator(){
+    public static void taskComparator(){
         Student[] st = new Student[3];
         st[0] = new Student("Alice", "Charlie", 4);
         st[1] = new Student("Bob","Bob" , 3.5F);
-        st[2] = new Student("Chalrie","Alice", 3);
+        st[2] = new Student("Charlie","Alice", 3);
 
         Comparator<Student> gpaComp = new GpaComparator();          //custom comp 1
         Comparator<Student> nameComp= new NameComparator();         //custom comp 2
