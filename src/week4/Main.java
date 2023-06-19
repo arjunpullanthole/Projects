@@ -32,7 +32,7 @@ public class Main {
 
         System.out.println("\n============:Task4:===============");
         Arrays.sort(st, Comparator.comparingInt(String::length)
-                .thenComparing(st1 -> st1.charAt(st1.length() - 1),Comparator.reverseOrder()));
+                .thenComparing(st2 -> (new StringBuilder(st2)).reverse(),Comparator.reverseOrder()));
         Arrays.stream(st).forEach(s -> System.out.printf("%s ",s));
     }
 }
