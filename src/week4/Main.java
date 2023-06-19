@@ -19,8 +19,8 @@ public class Main {
         System.out.println("\n============:Task2:===============");
         Arrays.stream(st).filter(s -> {
             String vowels = "aeiouAEIOU";
-            return s.chars().anyMatch(c -> vowels.indexOf(c) != -1);}
-        ).forEach(s -> {
+            return s.chars().anyMatch(c -> vowels.indexOf(c) != -1);})
+                .forEach(s -> {
             String vowels = "aeiouAEIOU";
             int count = (int) s.chars().filter(c -> vowels.indexOf(c) != -1).count();
             System.out.printf("%s has %d vowels\n",s,count);
