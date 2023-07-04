@@ -1,11 +1,16 @@
 package week6;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
 public class Account {
     private String accountNumber;
     private String accountType;
+
+    public Account(String accountNumber, String accountType) {
+        this.accountNumber = accountNumber;
+        this.accountType = accountType;
+    }
 
     public void print()
     {
