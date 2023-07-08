@@ -20,11 +20,11 @@ public class SubmissionService implements ISubmissionService{
         return db.fetch(id);
     }
     @Override
-    public SubmissionRequest remove(UUID id) {
-        return db.delete(id);
+    public void remove(UUID id) {
+        db.delete(id);
     }
     @Override
-    public SubmissionRequest update(SubmissionRequest sr) {
+    public boolean update(SubmissionRequest sr) {
         return db.update(sr);
     }
     @Override

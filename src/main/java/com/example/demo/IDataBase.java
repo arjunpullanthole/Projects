@@ -7,7 +7,7 @@ import java.util.UUID;
 public interface IDataBase {
     SubmissionRequest store(SubmissionRequest sr);
     SubmissionRequest fetch(UUID id);
-    SubmissionRequest update(SubmissionRequest sr);
-    SubmissionRequest delete(UUID id);
+    boolean update(SubmissionRequest sr);
+    void delete(UUID id);
     List<SubmissionRequest> fetchAll();
 }

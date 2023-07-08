@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,32 +12,33 @@ import java.util.UUID;
 @RequestMapping("/Submission")
 public class SubmissionHandler {
     @Autowired
-    SubmissionService ss;
+    ISubmissionService ss;
     @GetMapping
-    public List<SubmissionRequest> getAll()
-//    public String getAll()
+    public ResponseEntity<List<SubmissionRequest>> getAll()
     {
-        return ss.retrieveAll();
-//        return "<h1>Service Running<h1>";
+        return new ResponseEntity<>(ss.retrieveAll(),HttpStatus.OK);
     }
     @GetMapping("/{id}")
-    public SubmissionRequest get(@PathVariable("id") UUID uuid)
+    public ResponseEntity<SubmissionRequest> get(@PathVariable("id") UUID uuid)
     {
-        return ss.retrieve(uuid);
+        return new ResponseEntity<>(ss.retrieve(uuid),HttpStatus.OK);
     }
     @PostMapping("/data")
-    public SubmissionRequest post(@RequestBody SubmissionRequest sr)
+    public ResponseEntity<SubmissionRequest> post(@RequestBody SubmissionRequest sr)
     {
-        return ss.submit(sr);
+        return new ResponseEntity<>(ss.submit(sr),HttpStatus.CREATED);
     }
     @PutMapping("/data")
-    public SubmissionRequest put(@RequestBody SubmissionRequest sr)
+    public ResponseEntity<String> put(@RequestBody SubmissionRequest sr)
     {
-        return ss.update(sr);
+        if(ss.update(sr))
+            return new ResponseEntity<>("Updated",HttpStatus.OK);
+        return new ResponseEntity<>("ID is not present",HttpStatus.BAD_REQUEST);
     }
     @DeleteMapping("/{id}")
-    public SubmissionRequest delete(@PathVariable("id") UUID uuid)
+    public ResponseEntity<String> delete(@PathVariable("id") UUID uuid)
     {
-        return ss.remove(uuid);
+        ss.remove(uuid);
+        return new ResponseEntity<>("Deleted", HttpStatus.NO_CONTENT);
     }
 }

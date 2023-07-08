@@ -21,13 +21,17 @@ public class DataBase implements IDataBase{
         return db.get(id);
     }
     @Override
-    public SubmissionRequest update(SubmissionRequest sr) {
-        db.put(sr.getId(),sr);
-        return sr;
+    public boolean update(SubmissionRequest sr) {
+        if(db.containsKey(sr.getId()))
+        {
+            db.put(sr.getId(),sr);
+            return true;
+        }
+        return false;
     }
     @Override
-    public SubmissionRequest delete(UUID id) {
-        return db.remove(id);
+    public void delete(UUID id) {
+        db.remove(id);
     }
     @Override
     public List<SubmissionRequest> fetchAll() {
