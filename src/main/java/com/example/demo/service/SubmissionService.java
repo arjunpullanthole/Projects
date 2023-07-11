@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.service;
 
+import com.example.demo.dto.SubmissionRequest;
+import com.example.demo.database.IDataBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class SubmissionService implements ISubmissionService{
+public class SubmissionService implements ISubmissionService {
     @Autowired
     IDataBase db;
     @Override

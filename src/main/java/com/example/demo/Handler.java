@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import com.example.demo.dto.PostRequest;
+import com.example.demo.dto.PutRequest;
+import com.example.demo.service.DataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

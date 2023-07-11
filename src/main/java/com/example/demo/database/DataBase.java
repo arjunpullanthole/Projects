@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.demo.database;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.dto.SubmissionRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class DataBase implements IDataBase{
-    public HashMap<UUID,SubmissionRequest> db = new HashMap<>();
+public class DataBase implements IDataBase {
+    public HashMap<UUID, SubmissionRequest> db = new HashMap<>();
     @Override
     public SubmissionRequest store(SubmissionRequest sr) {
         db.put(sr.getId(),sr);

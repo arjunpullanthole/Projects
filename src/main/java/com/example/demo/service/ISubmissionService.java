@@ -1,4 +1,6 @@
-package com.example.demo;
+package com.example.demo.service;
+
+import com.example.demo.dto.SubmissionRequest;
 
 import java.util.List;
 import java.util.UUID;

@@ -1,6 +1,7 @@
-package com.example.demo;
+package com.example.demo.database;
 
-import java.util.HashMap;
+import com.example.demo.dto.SubmissionRequest;
+
 import java.util.List;
 import java.util.UUID;
 
