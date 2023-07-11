@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import com.example.demo.dto.SubmissionRequest;
 import com.example.demo.service.ISubmissionService;
